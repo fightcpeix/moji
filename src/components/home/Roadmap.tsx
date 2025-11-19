@@ -239,11 +239,8 @@ const NextPhase = styled.div`
   margin-top: 4rem;
   text-align: center;
   padding: 2.5rem 3rem;
-  background: linear-gradient(
-    135deg,
-    rgba(171, 198, 230, 0.5) 0%,
-    rgba(189, 217, 251, 0.64) 100%
-  );
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 3px 3px 30px 3px #b0d7dc;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;

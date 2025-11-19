@@ -49,20 +49,24 @@ const NavbarStyle = styled.div<{
     a {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 5px;
       text-decoration: none;
 
       .logo-text {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 800;
         background: linear-gradient(135deg, #4691f1 0%, #93b2da 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-
-        @media screen and (max-width: 640px) {
-          font-size: 20px;
-        }
+        margin: 0;
+        line-height: 1em;
+      }
+      .sub-title {
+        font-size: 12px;
+        text-align: right;
+        color: #bbb;
+        letter-spacing: 2px;
       }
     }
   }
@@ -273,7 +277,10 @@ const Navbar = () => {
               height={50}
               style={{ objectFit: 'contain' }}
             />
-            <span className="logo-text">MOJI HOUSE</span>
+            <div>
+              <p className="logo-text">MOJI HOUSE</p>
+              <p className="sub-title">WHITE PAPER</p>
+            </div>
           </Link>
         </div>
 

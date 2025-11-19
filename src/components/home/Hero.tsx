@@ -270,10 +270,6 @@ export const Hero = () => {
               market — leveraging blockchain technology with MOJI Token to build
               transparency, trust, and efficiency in property transactions.
             </p>
-            <CTAButtons>
-              <Button $variant="primary">Get Started</Button>
-              <Button $variant="secondary">Learn More</Button>
-            </CTAButtons>
           </TextContent>
 
           <ImagePlaceholder>

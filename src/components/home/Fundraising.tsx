@@ -283,7 +283,7 @@ export const Fundraising = () => {
               <div className="badge">Early Bird</div>
               <h3>Presale</h3>
               <div className="percentage">5%</div>
-              <div className="price">0.01 THB/token</div>
+              <div className="price">0.01 USDT/token</div>
               <div className="description">
                 Early supporter round for platform development and ecosystem
                 building. Limited supply at the lowest price.
@@ -294,7 +294,7 @@ export const Fundraising = () => {
               <div className="badge">Public Round</div>
               <h3>Public Sale</h3>
               <div className="percentage">5%</div>
-              <div className="price">0.02 THB/token</div>
+              <div className="price">0.02 USDT/token</div>
               <div className="description">
                 Open to the public for marketing initiatives and strategic
                 partnerships. Accessible to all participants.

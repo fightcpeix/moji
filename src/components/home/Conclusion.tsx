@@ -2,7 +2,6 @@
 
 import styled from 'styled-components';
 import { Container } from '@/components/common/Container';
-import { TypedText } from '@/components/common/TypedText';
 import { IconBox, IconHome, IconWorld } from '@tabler/icons-react';
 
 const Section = styled.div`
@@ -382,10 +381,9 @@ export const Conclusion = () => {
           </Title>
 
           <Description data-aos="fade-up" data-aos-delay="100">
-            <TypedText
-              text="MOJI is a token built to revolutionize the online real estate industry through Voting, Ranking, Staking, Burning, and Reward systems."
-              speed={30}
-            />
+            MOJI is a token built to revolutionize the online real estate
+            industry through Voting, Ranking, Staking, Burning, and Reward
+            systems.
           </Description>
 
           <Mission data-aos="zoom-in" data-aos-delay="200">
@@ -426,7 +424,7 @@ export const Conclusion = () => {
                 <span>Join Presale Now</span>
               </Button>
               <Button $variant="secondary">
-                <span>Read Whitepaper</span>
+                <span>Read Whitepaper Again</span>
               </Button>
             </CTAButtons>
           </CTASection>

@@ -66,17 +66,32 @@ const FooterColumn = styled.div`
 
 const Brand = styled.div`
   .logo {
-    font-size: 2rem;
-    font-weight: 900;
     display: flex;
     flex-direction: row;
-    gap: 5px;
-    align-items: center;
-    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .text-logo {
+      margin-top: 20px;
+      margin-bottom: 0;
+      font-weight: 900;
+      gap: 5px;
+      font-size: 1.6rem;
+      line-height: 1.1em;
+      align-items: center;
+      background: linear-gradient(135deg, #659af1 0%, #788ba3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .sub-title {
+      margin: 0;
+      color: #94a3b8;
+      text-align: right;
+      letter-spacing: 3px;
+      font-size: 15px;
+    }
   }
 `;
 
@@ -102,10 +117,14 @@ export const Footer = () => {
               <Image
                 src="/images/logo1.svg"
                 alt="logo"
-                width={60}
-                height={60}
+                width={100}
+                height={100}
+                style={{ objectFit: 'contain' }}
               />
-              Moji House
+              <div>
+                <p className="text-logo">MOJI HOUSE</p>
+                <p className="sub-title">WHITE PAPER</p>
+              </div>
             </div>
             <p>
               Revolutionizing real estate with blockchain technology. Building a

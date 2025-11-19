@@ -10,7 +10,9 @@ import Image from 'next/image';
 
 const Section = styled.div`
   padding: 100px 0;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(135deg, rgb(26, 26, 26) 0%, rgb(45, 45, 45) 100%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   color: white;
   position: relative;
   overflow: hidden;
@@ -128,8 +130,23 @@ const AllocationGrid = styled.div`
 `;
 
 const AllocationCard = styled.div<{ $percentage: number }>`
-  background: rgba(255, 255, 255, 0.05);
+  // background: url('/images/cards/home1.webp') center center no-repeat;
+  background-size: cover;
   backdrop-filter: blur(10px);
+  .contents {
+    z-index: 10;
+  }
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s;
+  }
   padding: 1.5rem;
   border-radius: 16px;
   border: 1px solid rgba(147, 178, 218, 0.2);
@@ -151,8 +168,10 @@ const AllocationCard = styled.div<{ $percentage: number }>`
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-4px);
+    color: white;
+    &::after {
+      backdrop-filter: blur(20px);
+    }
   }
 
   .percentage {
@@ -166,14 +185,14 @@ const AllocationCard = styled.div<{ $percentage: number }>`
   }
 
   .allocation-name {
-    font-size: 1.125rem;
+    font-size: 1.1em;
     font-weight: 600;
     color: white;
     margin-bottom: 0.5rem;
   }
 
   .allocation-note {
-    font-size: 0.875rem;
+    font-size: 0.9em;
     color: #abadaf;
     line-height: 1.5;
   }
@@ -194,12 +213,12 @@ const allocations = [
   {
     name: 'Presale',
     percentage: 5,
-    note: '0.01 THB per token – Development & Ecosystem'
+    note: '0.01 USDT per token – Development & Ecosystem'
   },
   {
     name: 'Public Sale',
     percentage: 5,
-    note: '0.02 THB per token – Marketing & Partnerships'
+    note: '0.02 USDT per token – Marketing & Partnerships'
   },
   { name: 'Activate Reward Pool', percentage: 5, note: 'Initial Distribution' },
   {
@@ -253,7 +272,7 @@ export const Tokenomics = () => {
             <div className="label">Total Supply</div>
             <div className="value">8.2B+</div>
             <div className="description">
-              8,205,134,767 tokens representing global population
+              Minted until reaching 8,205,134,767 tokens
             </div>
           </InfoCard>
 
@@ -279,9 +298,11 @@ export const Tokenomics = () => {
           <AllocationGrid>
             {allocations.map((allocation, index) => (
               <AllocationCard key={index} $percentage={allocation.percentage}>
-                <div className="percentage">{allocation.percentage}%</div>
-                <div className="allocation-name">{allocation.name}</div>
-                <div className="allocation-note">{allocation.note}</div>
+                <div className="contents">
+                  <div className="percentage">{allocation.percentage}%</div>
+                  <div className="allocation-name">{allocation.name}</div>
+                  <div className="allocation-note">{allocation.note}</div>
+                </div>
               </AllocationCard>
             ))}
           </AllocationGrid>

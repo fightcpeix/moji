@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 import { Container, SectionTitle } from '@/components/common/Container';
 import {
-  IconAlertCircle,
+  IconCircle,
   IconCircleCheck,
   IconCircleCheckFilled
 } from '@tabler/icons-react';
@@ -13,8 +13,7 @@ const Section = styled.div`
   position: relative;
   scroll-margin-top: 80px;
   overflow: hidden;
-  background: #eff3f8 url('/images/texture/texture1.webp') no-repeat -5% 105%;
-  background-size: 50%;
+  background: #eff3f8;
 
   /* Dot pattern - Left side */
   &::before {
@@ -83,6 +82,22 @@ const Section = styled.div`
   @media (max-width: 768px) {
     padding: 60px 0;
   }
+`;
+
+const BackgroundImage = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  width: 50%;
+  height: 100%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+  background: url('/images/robot-hand.webp') no-repeat right bottom;
+  background-size: contain;
+  transform: scaleX(-1);
+  z-index: 0;
+  pointer-events: none;
 `;
 
 const ContentGrid = styled.div`
@@ -161,7 +176,7 @@ const ColumnTitle = styled.h3`
   .icon {
     width: 50px;
     height: 50px;
-    border-radius: 12px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -172,7 +187,7 @@ const ColumnTitle = styled.h3`
 
     .icon {
       background: #f5f7f9;
-      color: #6b7280;
+      color: #929498;
     }
   }
 
@@ -204,7 +219,9 @@ const ItemList = styled.ul`
 const Item = styled.li<{ $index: number }>`
   padding: 1.5rem;
   margin-bottom: 1rem;
-  background: #ffffff;
+  background: #ffffff90;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 12px;
   transition: all 0.3s ease;
   opacity: 0;
@@ -319,23 +336,19 @@ const solutions = [
 export const ProblemSolution = () => {
   return (
     <Section id="about">
+      <BackgroundImage />
       <Container>
         <SectionTitle data-aos="fade-down">
           Challenges & Innovations
         </SectionTitle>
         <ContentGrid>
           <Column data-aos="fade-right" data-aos-delay="100">
-            <ColumnTitle className="problems">
-              <span className="icon">
-                <IconAlertCircle size={28} />
-              </span>
-              The Problems
-            </ColumnTitle>
+            <ColumnTitle className="problems">The Problems</ColumnTitle>
             <ItemList>
               {problems.map((problem, index) => (
                 <Item key={index} $index={index} className="problem">
                   <span className="item-icon">
-                    <IconAlertCircle size={20} color="#6b7280" />
+                    <IconCircle size={10} color="#6b7280" />
                   </span>
                   <span className="item-text">{problem}</span>
                 </Item>
