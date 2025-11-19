@@ -280,27 +280,27 @@ const NextPhase = styled.div`
 
 const roadmapPhases = [
   {
-    period: 'Q1 2025',
+    period: '11 Jun 2025',
     title: 'Presale',
     description:
       'Initial token sale for early supporters and ecosystem development',
     icon: IconChartBar
   },
   {
-    period: 'Q1 2025',
+    period: '30 Sep 2025',
     title: 'MVP Platform Launch',
     description: 'Launch minimum viable product with core features',
     icon: IconRocket
   },
   {
-    period: 'Q2 2025',
+    period: '15 Oct 2025',
     title: 'Rewards, Voting & Ranking',
     description:
       'Implement community-driven features for property evaluation (Off-chain)',
     icon: IconTarget
   },
   {
-    period: 'Q2 2025',
+    period: '15 Dec 2025',
     title: 'Public Sale',
     description: 'Open token sale to the public with expanded distribution',
     icon: IconCoin
