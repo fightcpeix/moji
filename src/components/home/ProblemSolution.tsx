@@ -320,9 +320,11 @@ export const ProblemSolution = () => {
   return (
     <Section id="about">
       <Container>
-        <SectionTitle>Challenges & Innovations</SectionTitle>
+        <SectionTitle data-aos="fade-down">
+          Challenges & Innovations
+        </SectionTitle>
         <ContentGrid>
-          <Column>
+          <Column data-aos="fade-right" data-aos-delay="100">
             <ColumnTitle className="problems">
               <span className="icon">
                 <IconAlertCircle size={28} />
@@ -341,7 +343,7 @@ export const ProblemSolution = () => {
             </ItemList>
           </Column>
 
-          <Column>
+          <Column data-aos="fade-left" data-aos-delay="200">
             <ColumnTitle className="solutions">
               <span className="icon">
                 <IconCircleCheck size={28} />

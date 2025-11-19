@@ -377,18 +377,18 @@ export const Conclusion = () => {
     <Section>
       <Container>
         <Content>
-          <Title>
+          <Title data-aos="fade-down">
             The Future of <span className="highlight">Real Estate</span>
           </Title>
 
-          <Description>
+          <Description data-aos="fade-up" data-aos-delay="100">
             <TypedText
               text="MOJI is a token built to revolutionize the online real estate industry through Voting, Ranking, Staking, Burning, and Reward systems."
               speed={30}
             />
           </Description>
 
-          <Mission>
+          <Mission data-aos="zoom-in" data-aos-delay="200">
             <p>
               Our mission is to establish a{' '}
               <span className="bold">secure, transparent, and accessible</span>{' '}
@@ -406,7 +406,12 @@ export const Conclusion = () => {
 
           <FeaturesHighlight>
             {features.map((feature, index) => (
-              <FeatureItem key={index} $index={index}>
+              <FeatureItem
+                key={index}
+                $index={index}
+                data-aos="flip-up"
+                data-aos-delay={index * 100}
+              >
                 <div className="icon">{feature.icon}</div>
                 <div className="feature-title">{feature.title}</div>
                 <div className="feature-desc">{feature.desc}</div>
@@ -414,7 +419,7 @@ export const Conclusion = () => {
             ))}
           </FeaturesHighlight>
 
-          <CTASection>
+          <CTASection data-aos="fade-up" data-aos-delay="100">
             <CTATitle>Join Us in Building the Future</CTATitle>
             <CTAButtons>
               <Button $variant="primary">
@@ -426,7 +431,7 @@ export const Conclusion = () => {
             </CTAButtons>
           </CTASection>
 
-          <Tagline>
+          <Tagline data-aos="fade-up" data-aos-delay="200">
             <p>
               "Join us in building a limitless real estate ecosystem — the
               future of decentralized property ownership starts here."

@@ -1,0 +1,21 @@
+{
+  "name": "Moji House - Blockchain Real Estate Platform",
+  "short_name": "Moji House",
+  "description": "Revolutionizing real estate with blockchain technology and MOJI Token",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5987c2",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo1.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "business", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}

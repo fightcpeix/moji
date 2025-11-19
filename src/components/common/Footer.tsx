@@ -80,32 +80,6 @@ const Brand = styled.div`
   }
 `;
 
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-`;
-
-const SocialIcon = styled.a`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(59, 130, 246, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #3b82f6;
-  font-size: 1.25rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: #3b82f6;
-    color: white;
-    transform: translateY(-4px);
-  }
-`;
-
 const FooterBottom = styled.div`
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);

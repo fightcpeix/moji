@@ -137,75 +137,6 @@ const DetailList = styled.ul`
   }
 `;
 
-const TechImagePlaceholder = styled.div`
-  margin-top: 80px;
-  height: 400px;
-  background: linear-gradient(135deg, #5987c2 0%, #93b2da 100%);
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    animation: ripple 3s ease-in-out infinite;
-  }
-
-  @keyframes ripple {
-    0% {
-      transform: translate(-50%, -50%) scale(0.8);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1.5);
-      opacity: 0;
-    }
-  }
-
-  .placeholder-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: white;
-
-    .placeholder-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .placeholder-subtitle {
-      font-size: 1.25rem;
-      opacity: 0.9;
-    }
-  }
-
-  @media (max-width: 768px) {
-    height: 300px;
-    margin-top: 60px;
-
-    .placeholder-content {
-      .placeholder-title {
-        font-size: 1.5rem;
-      }
-
-      .placeholder-subtitle {
-        font-size: 1rem;
-      }
-    }
-  }
-`;
-
 const features = [
   {
     icon: IconDeviceIpadStar,
@@ -248,8 +179,10 @@ export const BlockchainSection = () => {
   return (
     <Section>
       <Container>
-        <SectionTitle>Blockchain & Smart Contracts</SectionTitle>
-        <SectionSubtitle>
+        <SectionTitle data-aos="fade-down">
+          Blockchain & Smart Contracts
+        </SectionTitle>
+        <SectionSubtitle data-aos="fade-up" data-aos-delay="100">
           Moji House utilizes blockchain technology to record and automate all
           transactions securely and transparently through Smart Contracts
         </SectionSubtitle>
@@ -258,7 +191,12 @@ export const BlockchainSection = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <FeatureCard key={index} $index={index}>
+              <FeatureCard
+                key={index}
+                $index={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
                 <div className="flex flex-col justify-center text-center items-center">
                   <div className="icon-wrapper">
                     <Icon size={40} stroke={2} />

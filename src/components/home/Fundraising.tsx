@@ -265,15 +265,21 @@ export const Fundraising = () => {
   return (
     <Section id="fundraising">
       <Container>
-        <SectionTitle>Fundraising & Token Sale</SectionTitle>
-        <SectionSubtitle>
+        <SectionTitle data-aos="fade-down">
+          Fundraising & Token Sale
+        </SectionTitle>
+        <SectionSubtitle data-aos="fade-up" data-aos-delay="100">
           Join the revolution in real estate with our transparent token sale
           structure
         </SectionSubtitle>
 
         <ContentWrapper>
           <SaleRoundsGrid>
-            <SaleCard $variant="presale">
+            <SaleCard
+              $variant="presale"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
               <div className="badge">Early Bird</div>
               <h3>Presale</h3>
               <div className="percentage">5%</div>
@@ -284,7 +290,7 @@ export const Fundraising = () => {
               </div>
             </SaleCard>
 
-            <SaleCard $variant="public">
+            <SaleCard $variant="public" data-aos="zoom-in" data-aos-delay="300">
               <div className="badge">Public Round</div>
               <h3>Public Sale</h3>
               <div className="percentage">5%</div>
@@ -296,7 +302,7 @@ export const Fundraising = () => {
             </SaleCard>
           </SaleRoundsGrid>
 
-          <PurchaseInfo>
+          <PurchaseInfo data-aos="fade-up" data-aos-delay="100">
             <div className="label">Purchase Method</div>
             <div className="info">
               Token purchases available via official channels announced by the
@@ -304,11 +310,11 @@ export const Fundraising = () => {
             </div>
           </PurchaseInfo>
 
-          <SecuritySection>
+          <SecuritySection data-aos="fade-up" data-aos-delay="200">
             <h3>Legal & Security</h3>
 
             <SecurityGrid>
-              <SecurityItem>
+              <SecurityItem data-aos="flip-left" data-aos-delay="100">
                 <div className="icon">
                   <IconClipboardCheck size={50} />
                 </div>
@@ -319,7 +325,7 @@ export const Fundraising = () => {
                 </div>
               </SecurityItem>
 
-              <SecurityItem>
+              <SecurityItem data-aos="flip-left" data-aos-delay="200">
                 <div className="icon">
                   <IconShieldCheck size={50} />
                 </div>
@@ -329,7 +335,7 @@ export const Fundraising = () => {
                 </div>
               </SecurityItem>
 
-              <SecurityItem>
+              <SecurityItem data-aos="flip-left" data-aos-delay="300">
                 <div className="icon">
                   <IconDatabaseSearch size={50} />️
                 </div>

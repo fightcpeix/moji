@@ -361,7 +361,7 @@ export const Roadmap = () => {
   return (
     <Section id="roadmap">
       <Container>
-        <Header>
+        <Header data-aos="fade-up">
           <h2>
             Company <span className="highlight">Timeline</span>
           </h2>
@@ -375,7 +375,12 @@ export const Roadmap = () => {
           {roadmapPhases.map((phase, index) => {
             const IconComponent = phase.icon;
             return (
-              <TimelineItem key={index} $index={index}>
+              <TimelineItem
+                key={index}
+                $index={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
+              >
                 <Period>
                   <span>{phase.period}</span>
                   <IconWrapper>
@@ -394,7 +399,7 @@ export const Roadmap = () => {
           })}
         </Timeline>
 
-        <NextPhase>
+        <NextPhase data-aos="zoom-in" data-aos-delay="200">
           <h3>Next Phase</h3>
           <p>Moji Crowdfunding Launch</p>
         </NextPhase>

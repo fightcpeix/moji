@@ -9,12 +9,15 @@ interface AnimatedSectionProps {
 }
 
 const SectionWrapper = styled.section<{ $isVisible: boolean }>`
-  opacity: ${props => props.$isVisible ? 1 : 0};
-  transform: translateY(${props => props.$isVisible ? '0' : '50px'});
+  opacity: ${(props) => (props.$isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.$isVisible ? '0' : '50px')});
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 `;
 
-export const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className }) => {
+export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
+  children,
+  className
+}) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -43,7 +46,11 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, clas
   }, []);
 
   return (
-    <SectionWrapper ref={sectionRef} $isVisible={isVisible} className={className}>
+    <SectionWrapper
+      ref={sectionRef}
+      $isVisible={isVisible}
+      className={className}
+    >
       {children}
     </SectionWrapper>
   );

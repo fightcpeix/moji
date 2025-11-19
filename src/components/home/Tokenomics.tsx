@@ -189,64 +189,6 @@ const AllocationCard = styled.div<{ $percentage: number }>`
   }
 `;
 
-const ChartPlaceholder = styled.div`
-  margin-top: 4rem;
-  height: 400px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  border: 1px solid rgba(147, 178, 218, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 250px;
-    background: linear-gradient(
-      135deg,
-      rgba(89, 135, 194, 0.2) 0%,
-      rgba(147, 178, 218, 0.2) 100%
-    );
-    border-radius: 50%;
-    animation: rotate 10s linear infinite;
-  }
-
-  @keyframes rotate {
-    from {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
-
-  .placeholder-text {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #93b2da;
-  }
-
-  @media (max-width: 768px) {
-    height: 300px;
-
-    .placeholder-text {
-      font-size: 1.25rem;
-      padding: 20px;
-    }
-  }
-`;
-
 const allocations = [
   { name: 'Airdrop', percentage: 2, note: 'Community Incentive' },
   {
