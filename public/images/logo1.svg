@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1080 1080">
+  <!-- Generator: Adobe Illustrator 29.8.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 160)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#linear-gradient2);
+      }
+
+      .st1 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="583.34" y1="539.57" x2="938.08" y2="539.57" gradientTransform="translate(484.96 -351.37) rotate(37.45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5987c2"/>
+      <stop offset="1" stop-color="#5987c2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="289.22" y1="539.57" x2="643.95" y2="539.57" gradientTransform="translate(424.32 -172.5) rotate(37.45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9cb3dc"/>
+      <stop offset="1" stop-color="#5987c2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient2" x1="138.33" y1="632.93" x2="349.61" y2="632.93" gradientTransform="translate(435.2 -17.88) rotate(37.45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cdd4d6"/>
+      <stop offset="1" stop-color="#93b2da"/>
+    </linearGradient>
+  </defs>
+  <rect class="st2" x="682.86" y="298.09" width="155.71" height="482.98" rx="77.85" ry="77.85" transform="translate(-171.3 573.85) rotate(-37.45)"/>
+  <rect class="st1" x="388.73" y="298.09" width="155.71" height="482.98" rx="77.85" ry="77.85" transform="translate(-231.94 394.98) rotate(-37.45)"/>
+  <rect class="st0" x="166.12" y="509.39" width="155.71" height="247.07" rx="77.85" ry="77.85" transform="translate(-334.6 278.85) rotate(-37.45)"/>
+</svg>
