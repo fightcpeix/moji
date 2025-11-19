@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import MenuButton from '@/components/common/MenuButton';
 import Image from 'next/image';
+import { LanguageSwitcher } from '@/components/common/LanguageSwitcher';
 
 const NavbarStyle = styled.div<{
   $showMobile: boolean;
@@ -54,7 +55,7 @@ const NavbarStyle = styled.div<{
 
       .logo-text {
         font-size: 20px;
-        font-weight: 800;
+        font-weight: 700;
         background: linear-gradient(135deg, #4691f1 0%, #93b2da 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -290,6 +291,7 @@ const Navbar = () => {
               {item.name}
             </NavLink>
           ))}
+          <LanguageSwitcher />
           <CTAButton onClick={() => scrollToSection('fundraising')}>
             Join Presale
           </CTAButton>
@@ -302,6 +304,9 @@ const Navbar = () => {
             {item.name}
           </MobileMenuItem>
         ))}
+        <div style={{ padding: '16px 20px' }}>
+          <LanguageSwitcher />
+        </div>
         <MobileMenuItem onClick={() => scrollToSection('fundraising')}>
           <strong>Join Presale</strong>
         </MobileMenuItem>

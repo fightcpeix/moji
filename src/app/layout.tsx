@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Prompt } from 'next/font/google';
 import './globals.css';
 import StyledComponentsRegistry from '@/lib/registry';
 import { AOSInit } from '@/components/common/AOSInit';
+import { I18nProvider } from '@/lib/i18n/context';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -12,6 +13,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin']
+});
+
+const prompt = Prompt({
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin', 'thai'],
+  variable: '--font-prompt',
+  display: 'swap'
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mojihouse.com';
@@ -145,10 +153,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${prompt.variable} antialiased`}
       >
         <AOSInit />
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <I18nProvider>{children}</I18nProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

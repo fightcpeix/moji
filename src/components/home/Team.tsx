@@ -6,6 +6,7 @@ import {
   SectionTitle,
   SectionSubtitle
 } from '@/components/common/Container';
+import { useI18n } from '@/lib/i18n/context';
 
 const Section = styled.div`
   padding: 100px 0;
@@ -146,45 +147,43 @@ const Notice = styled.div`
   }
 `;
 
-const teamMembers = [
-  {
-    emoji: '👔',
-    role: 'Advisor',
-    name: 'Project & Technology Advisor',
-    description:
-      'Strategic guidance for platform development and technology integration'
-  },
-  {
-    emoji: '💼',
-    role: 'Leadership',
-    name: 'Founder & CEO',
-    description:
-      'Visionary leader driving the future of real estate blockchain technology'
-  },
-  {
-    emoji: '⚙️',
-    role: 'Technology',
-    name: 'CTO & Lead Developer',
-    description:
-      'Expert in blockchain engineering and smart contract development'
-  },
-  {
-    emoji: '📊',
-    role: 'Strategy',
-    name: 'Market Research Lead',
-    description: 'Platform strategy and market analysis specialist'
-  }
-];
+const teamEmojis = ['👔', '💼', '⚙️', '📊'];
 
 export const Team = () => {
+  const { t } = useI18n();
+
+  const teamMembers = [
+    {
+      emoji: teamEmojis[0],
+      role: t('team.members.0.role'),
+      name: t('team.members.0.name'),
+      description: t('team.members.0.description')
+    },
+    {
+      emoji: teamEmojis[1],
+      role: t('team.members.1.role'),
+      name: t('team.members.1.name'),
+      description: t('team.members.1.description')
+    },
+    {
+      emoji: teamEmojis[2],
+      role: t('team.members.2.role'),
+      name: t('team.members.2.name'),
+      description: t('team.members.2.description')
+    },
+    {
+      emoji: teamEmojis[3],
+      role: t('team.members.3.role'),
+      name: t('team.members.3.name'),
+      description: t('team.members.3.description')
+    }
+  ];
+
   return (
     <Section id="team">
       <Container>
-        <SectionTitle>Team & Advisors</SectionTitle>
-        <SectionSubtitle>
-          A team of experienced professionals dedicated to revolutionizing real
-          estate
-        </SectionSubtitle>
+        <SectionTitle>{t('team.title')}</SectionTitle>
+        <SectionSubtitle>{t('team.subtitle')}</SectionSubtitle>
 
         <TeamGrid>
           {teamMembers.map((member, index) => (
@@ -199,10 +198,7 @@ export const Team = () => {
         </TeamGrid>
 
         <Notice>
-          <p>
-            Details regarding the development team and advisors will be
-            disclosed in later stages for security and operational neutrality.
-          </p>
+          <p>{t('team.notice')}</p>
         </Notice>
       </Container>
     </Section>

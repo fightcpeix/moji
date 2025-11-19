@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 import { Container } from '@/components/common/Container';
 import Image from 'next/image';
+import { useI18n } from '@/lib/i18n/context';
 
 const HeroSection = styled.section`
   min-height: 100vh;
@@ -83,7 +84,7 @@ const HeroGrid = styled.div`
 const TextContent = styled.div`
   h1 {
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.3;
     margin-bottom: 1.5rem;
     color: #1a1a1a;
@@ -113,57 +114,6 @@ const TextContent = styled.div`
     @media (max-width: 640px) {
       font-size: 1rem;
     }
-  }
-`;
-
-const CTAButtons = styled.div`
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-
-  @media (max-width: 968px) {
-    justify-content: center;
-  }
-
-  @media (max-width: 640px) {
-    flex-direction: column;
-  }
-`;
-
-const Button = styled.button<{ $variant?: 'primary' | 'secondary' }>`
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  ${(props) =>
-    props.$variant === 'primary'
-      ? `
-    background: linear-gradient(135deg, #5799ed 0%, #b3c7e1 100%);
-    color: white;
-    box-shadow: 0 4px 14px rgba(89, 135, 194, 0.3);
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(89, 135, 194, 0.4);
-    }
-  `
-      : `
-    background: white;
-    color: #5987c2;
-    border: 2px solid #5987c2;
-
-    &:hover {
-      background: #f8fafb;
-      transform: translateY(-2px);
-    }
-  `}
-
-  &:active {
-    transform: translateY(0);
   }
 `;
 
@@ -253,23 +203,21 @@ const StatItem = styled.div`
 `;
 
 export const Hero = () => {
+  const { t } = useI18n();
+
   return (
     <HeroSection>
       <HeroContent>
         <HeroGrid>
           <TextContent>
             <h1>
-              Revolutionizing
+              {t('hero.title')}
               <br />
-              <span className="gradient-text">Real Estate</span>
+              <span className="gradient-text">{t('hero.titleHighlight')}</span>
               <br />
-              with Blockchain
+              {t('hero.titleEnd')}
             </h1>
-            <p className="subtitle">
-              Moji House is a platform designed to transform the real estate
-              market — leveraging blockchain technology with MOJI Token to build
-              transparency, trust, and efficiency in property transactions.
-            </p>
+            <p className="subtitle">{t('hero.subtitle')}</p>
           </TextContent>
 
           <ImagePlaceholder>
@@ -279,16 +227,16 @@ export const Hero = () => {
 
         <StatsRow>
           <StatItem>
-            <div className="stat-number">8.2B+</div>
-            <div className="stat-label">Total Token Supply</div>
+            <div className="stat-number">{t('hero.stats.supply.value')}</div>
+            <div className="stat-label">{t('hero.stats.supply.label')}</div>
           </StatItem>
           <StatItem>
-            <div className="stat-number">100%</div>
-            <div className="stat-label">Blockchain Verified</div>
+            <div className="stat-number">{t('hero.stats.verified.value')}</div>
+            <div className="stat-label">{t('hero.stats.verified.label')}</div>
           </StatItem>
           <StatItem>
-            <div className="stat-number">24/7</div>
-            <div className="stat-label">AI-Powered Support</div>
+            <div className="stat-number">{t('hero.stats.support.value')}</div>
+            <div className="stat-label">{t('hero.stats.support.label')}</div>
           </StatItem>
         </StatsRow>
       </HeroContent>

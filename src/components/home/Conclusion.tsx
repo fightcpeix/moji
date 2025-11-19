@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 import { Container } from '@/components/common/Container';
 import { IconBox, IconHome, IconWorld } from '@tabler/icons-react';
+import { useI18n } from '@/lib/i18n/context';
 
 const Section = styled.div`
   padding: 120px 0;
@@ -149,7 +150,7 @@ const CTASection = styled.div`
 
 const CTATitle = styled.h3`
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 2rem;
 
@@ -353,53 +354,61 @@ const Tagline = styled.div`
   }
 `;
 
-const features = [
-  {
-    icon: <IconHome size={60} />,
-    title: 'Real Estate',
-    desc: 'Tangible asset-backed value'
-  },
-  {
-    icon: <IconBox size={60} />,
-    title: 'Blockchain',
-    desc: 'Transparent & secure'
-  },
-  {
-    icon: <IconWorld size={60} />,
-    title: 'Global',
-    desc: 'Borderless marketplace'
-  }
+const featuresIcons = [
+  <IconHome size={60} key="iconHome" />,
+  <IconBox size={60} key="iconBox" />,
+  <IconWorld size={60} key="iconWord" />
 ];
 
 export const Conclusion = () => {
+  const { t } = useI18n();
+
+  const features = [
+    {
+      icon: featuresIcons[0],
+      title: t('conclusion.features.0.title'),
+      desc: t('conclusion.features.0.description')
+    },
+    {
+      icon: featuresIcons[1],
+      title: t('conclusion.features.1.title'),
+      desc: t('conclusion.features.1.description')
+    },
+    {
+      icon: featuresIcons[2],
+      title: t('conclusion.features.2.title'),
+      desc: t('conclusion.features.2.description')
+    }
+  ];
+
+  // Parse mission text with <bold> tags
+  const missionText = t('conclusion.mission');
+  const missionParts = missionText.split('<bold>').map((part, index) => {
+    if (index === 0) return part;
+    const [boldText, ...rest] = part.split('</bold>');
+    return (
+      <span key={index}>
+        <span className="bold">{boldText}</span>
+        {rest.join('</bold>')}
+      </span>
+    );
+  });
+
   return (
     <Section>
       <Container>
         <Content>
           <Title data-aos="fade-down">
-            The Future of <span className="highlight">Real Estate</span>
+            {t('conclusion.title')}{' '}
+            <span className="highlight">{t('conclusion.titleHighlight')}</span>
           </Title>
 
           <Description data-aos="fade-up" data-aos-delay="100">
-            MOJI is a token built to revolutionize the online real estate
-            industry through Voting, Ranking, Staking, Burning, and Reward
-            systems.
+            {t('conclusion.description')}
           </Description>
 
           <Mission data-aos="zoom-in" data-aos-delay="200">
-            <p>
-              Our mission is to establish a{' '}
-              <span className="bold">secure, transparent, and accessible</span>{' '}
-              digital real estate hub, bridging the tangible value of real-world
-              property with cryptocurrency. Moji House represents the first step
-              toward integrating{' '}
-              <span className="bold">blockchain and smart home technology</span>{' '}
-              into global real estate — enabling a truly{' '}
-              <span className="bold">
-                borderless, community-driven marketplace
-              </span>
-              .
-            </p>
+            <p>{missionParts}</p>
           </Mission>
 
           <FeaturesHighlight>
@@ -418,22 +427,19 @@ export const Conclusion = () => {
           </FeaturesHighlight>
 
           <CTASection data-aos="fade-up" data-aos-delay="100">
-            <CTATitle>Join Us in Building the Future</CTATitle>
+            <CTATitle>{t('conclusion.cta.title')}</CTATitle>
             <CTAButtons>
               <Button $variant="primary">
-                <span>Join Presale Now</span>
+                <span>{t('conclusion.cta.primaryButton')}</span>
               </Button>
               <Button $variant="secondary">
-                <span>Read Whitepaper Again</span>
+                <span>{t('conclusion.cta.secondaryButton')}</span>
               </Button>
             </CTAButtons>
           </CTASection>
 
           <Tagline data-aos="fade-up" data-aos-delay="200">
-            <p>
-              "Join us in building a limitless real estate ecosystem — the
-              future of decentralized property ownership starts here."
-            </p>
+            <p>{t('conclusion.tagline')}</p>
           </Tagline>
         </Content>
       </Container>

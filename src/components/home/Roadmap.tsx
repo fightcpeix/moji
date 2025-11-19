@@ -16,6 +16,7 @@ import {
   IconHome,
   IconBuilding
 } from '@tabler/icons-react';
+import { useI18n } from '@/lib/i18n/context';
 
 const Section = styled.div`
   padding: 100px 0;
@@ -275,97 +276,108 @@ const NextPhase = styled.div`
   }
 `;
 
-const roadmapPhases = [
-  {
-    period: '11 Jun 2025',
-    title: 'Presale',
-    description:
-      'Initial token sale for early supporters and ecosystem development',
-    icon: IconChartBar
-  },
-  {
-    period: '30 Sep 2025',
-    title: 'MVP Platform Launch',
-    description: 'Launch minimum viable product with core features',
-    icon: IconRocket
-  },
-  {
-    period: '15 Oct 2025',
-    title: 'Rewards, Voting & Ranking',
-    description:
-      'Implement community-driven features for property evaluation (Off-chain)',
-    icon: IconTarget
-  },
-  {
-    period: '15 Dec 2025',
-    title: 'Public Sale',
-    description: 'Open token sale to the public with expanded distribution',
-    icon: IconCoin
-  },
-  {
-    period: 'Q2 2025',
-    title: 'Integrated Wallet',
-    description: 'Built-in wallet functionality for seamless transactions',
-    icon: IconWallet
-  },
-  {
-    period: 'Q3 2025',
-    title: 'DEX Listing',
-    description: 'List MOJI token on decentralized exchanges',
-    icon: IconChartLine
-  },
-  {
-    period: 'Q3 2025',
-    title: 'On-chain Systems',
-    description: 'Migrate rewards, burning, and redeem systems to blockchain',
-    icon: IconLink
-  },
-  {
-    period: 'Q3 2025',
-    title: 'Voting & Staking',
-    description: 'Launch fully decentralized voting and staking mechanisms',
-    icon: IconDeviceIpadStar
-  },
-  {
-    period: 'Q4 2025',
-    title: 'Feature Development',
-    description:
-      'Continuous platform enhancement and user experience improvements',
-    icon: IconSettings
-  },
-  {
-    period: 'Q4 2025',
-    title: 'Official Launch',
-    description: 'Global marketing campaign and worldwide platform rollout',
-    icon: IconWorld
-  },
-  {
-    period: 'Q1 2026',
-    title: 'Smart Home Integration',
-    description: 'Integrate IoT and smart home technology features',
-    icon: IconHome
-  },
-  {
-    period: 'Q2 2026',
-    title: 'CEX Listing',
-    description:
-      'List on major centralized exchanges for broader accessibility',
-    icon: IconBuilding
-  }
+const phaseIcons = [
+  IconChartBar,
+  IconRocket,
+  IconTarget,
+  IconCoin,
+  IconWallet,
+  IconChartLine,
+  IconLink,
+  IconDeviceIpadStar,
+  IconSettings,
+  IconWorld,
+  IconHome,
+  IconBuilding
 ];
 
 export const Roadmap = () => {
+  const { t } = useI18n();
+
+  const roadmapPhases = [
+    {
+      period: t('roadmap.phases.0.period'),
+      title: t('roadmap.phases.0.title'),
+      description: t('roadmap.phases.0.description'),
+      icon: phaseIcons[0]
+    },
+    {
+      period: t('roadmap.phases.1.period'),
+      title: t('roadmap.phases.1.title'),
+      description: t('roadmap.phases.1.description'),
+      icon: phaseIcons[1]
+    },
+    {
+      period: t('roadmap.phases.2.period'),
+      title: t('roadmap.phases.2.title'),
+      description: t('roadmap.phases.2.description'),
+      icon: phaseIcons[2]
+    },
+    {
+      period: t('roadmap.phases.3.period'),
+      title: t('roadmap.phases.3.title'),
+      description: t('roadmap.phases.3.description'),
+      icon: phaseIcons[3]
+    },
+    {
+      period: t('roadmap.phases.4.period'),
+      title: t('roadmap.phases.4.title'),
+      description: t('roadmap.phases.4.description'),
+      icon: phaseIcons[4]
+    },
+    {
+      period: t('roadmap.phases.5.period'),
+      title: t('roadmap.phases.5.title'),
+      description: t('roadmap.phases.5.description'),
+      icon: phaseIcons[5]
+    },
+    {
+      period: t('roadmap.phases.6.period'),
+      title: t('roadmap.phases.6.title'),
+      description: t('roadmap.phases.6.description'),
+      icon: phaseIcons[6]
+    },
+    {
+      period: t('roadmap.phases.7.period'),
+      title: t('roadmap.phases.7.title'),
+      description: t('roadmap.phases.7.description'),
+      icon: phaseIcons[7]
+    },
+    {
+      period: t('roadmap.phases.8.period'),
+      title: t('roadmap.phases.8.title'),
+      description: t('roadmap.phases.8.description'),
+      icon: phaseIcons[8]
+    },
+    {
+      period: t('roadmap.phases.9.period'),
+      title: t('roadmap.phases.9.title'),
+      description: t('roadmap.phases.9.description'),
+      icon: phaseIcons[9]
+    },
+    {
+      period: t('roadmap.phases.10.period'),
+      title: t('roadmap.phases.10.title'),
+      description: t('roadmap.phases.10.description'),
+      icon: phaseIcons[10]
+    },
+    {
+      period: t('roadmap.phases.11.period'),
+      title: t('roadmap.phases.11.title'),
+      description: t('roadmap.phases.11.description'),
+      icon: phaseIcons[11]
+    }
+  ];
+
   return (
     <Section id="roadmap">
       <Container>
         <Header data-aos="fade-up">
           <h2>
-            Company <span className="highlight">Timeline</span>
+            {t('roadmap.title')}{' '}
+            <span className="highlight">{t('roadmap.titleHighlight')}</span>
           </h2>
-          <SectionSubtitle>
-            Our strategic plan to revolutionize the real estate industry with
-            blockchain technology
-          </SectionSubtitle>
+          <SectionSubtitle>{t('roadmap.subtitle')}</SectionSubtitle>
         </Header>
 
         <Timeline>
@@ -397,8 +409,8 @@ export const Roadmap = () => {
         </Timeline>
 
         <NextPhase data-aos="zoom-in" data-aos-delay="200">
-          <h3>Next Phase</h3>
-          <p>Moji Crowdfunding Launch</p>
+          <h3>{t('roadmap.nextPhase.title')}</h3>
+          <p>{t('roadmap.nextPhase.description')}</p>
         </NextPhase>
       </Container>
     </Section>

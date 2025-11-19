@@ -7,6 +7,7 @@ import {
   IconCircleCheck,
   IconCircleCheckFilled
 } from '@tabler/icons-react';
+import { useI18n } from '@/lib/i18n/context';
 
 const Section = styled.div`
   padding: 100px 0;
@@ -312,38 +313,43 @@ const Item = styled.li<{ $index: number }>`
   }
 `;
 
-const problems = [
-  'Lack of transparency in credibility ranking systems',
-  'High fees and complex processes in international transactions',
-  'Difficulty for sellers to build trust and attract buyers',
-  'Risk of fraud due to unverified property sources',
-  'Cryptocurrency perceived as intangible and volatile',
-  'Manual handling of all transaction steps causing inefficiency'
-];
-
-const solutions = [
-  'Blockchain records for transparent and traceable transactions',
-  'Community-driven voting system via Smart Contracts',
-  'Reward mechanism generating income beyond commissions',
-  'Verified user roles: Property Owners, Agencies, and Customers',
-  'Reduced international fees using blockchain Smart Contracts',
-  'Real estate-backed cryptocurrency bridging tangible and digital value',
-  'NFTs for secure rental agreement records',
-  'AI systems for automated inquiries and scheduling',
-  'Virtual property tours enabling cross-border exploration'
-];
-
 export const ProblemSolution = () => {
+  const { t } = useI18n();
+
+  // Get problems and solutions arrays from translations
+  const problems = [
+    t('problemSolution.problems.0'),
+    t('problemSolution.problems.1'),
+    t('problemSolution.problems.2'),
+    t('problemSolution.problems.3'),
+    t('problemSolution.problems.4'),
+    t('problemSolution.problems.5')
+  ];
+
+  const solutions = [
+    t('problemSolution.solutions.0'),
+    t('problemSolution.solutions.1'),
+    t('problemSolution.solutions.2'),
+    t('problemSolution.solutions.3'),
+    t('problemSolution.solutions.4'),
+    t('problemSolution.solutions.5'),
+    t('problemSolution.solutions.6'),
+    t('problemSolution.solutions.7'),
+    t('problemSolution.solutions.8')
+  ];
+
   return (
     <Section id="about">
       <BackgroundImage />
       <Container>
         <SectionTitle data-aos="fade-down">
-          Challenges & Innovations
+          {t('problemSolution.title')}
         </SectionTitle>
         <ContentGrid>
           <Column data-aos="fade-right" data-aos-delay="100">
-            <ColumnTitle className="problems">The Problems</ColumnTitle>
+            <ColumnTitle className="problems">
+              {t('problemSolution.leftTitle')}
+            </ColumnTitle>
             <ItemList>
               {problems.map((problem, index) => (
                 <Item key={index} $index={index} className="problem">
@@ -361,7 +367,7 @@ export const ProblemSolution = () => {
               <span className="icon">
                 <IconCircleCheck size={28} />
               </span>
-              Our Solutions
+              {t('problemSolution.rightTitle')}
             </ColumnTitle>
             <ItemList>
               {solutions.map((solution, index) => (

@@ -11,6 +11,7 @@ import {
   IconDatabaseSearch,
   IconShieldCheck
 } from '@tabler/icons-react';
+import { useI18n } from '@/lib/i18n/context';
 
 const Section = styled.div`
   padding: 100px 0;
@@ -90,7 +91,7 @@ const SaleCard = styled.div<{ $variant: 'presale' | 'public' }>`
 
   h3 {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 1rem;
   }
@@ -262,15 +263,34 @@ const PurchaseInfo = styled.div`
 `;
 
 export const Fundraising = () => {
+  const { t } = useI18n();
+
+  const securityItems = [
+    {
+      icon: IconClipboardCheck,
+      title: t('fundraising.security.items.0.title'),
+      description: t('fundraising.security.items.0.description')
+    },
+    {
+      icon: IconShieldCheck,
+      title: t('fundraising.security.items.1.title'),
+      description: t('fundraising.security.items.1.description')
+    },
+    {
+      icon: IconDatabaseSearch,
+      title: t('fundraising.security.items.2.title'),
+      description: t('fundraising.security.items.2.description')
+    }
+  ];
+
   return (
     <Section id="fundraising">
       <Container>
         <SectionTitle data-aos="fade-down">
-          Fundraising & Token Sale
+          {t('fundraising.title')}
         </SectionTitle>
         <SectionSubtitle data-aos="fade-up" data-aos-delay="100">
-          Join the revolution in real estate with our transparent token sale
-          structure
+          {t('fundraising.subtitle')}
         </SectionSubtitle>
 
         <ContentWrapper>
@@ -280,70 +300,55 @@ export const Fundraising = () => {
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              <div className="badge">Early Bird</div>
-              <h3>Presale</h3>
-              <div className="percentage">5%</div>
-              <div className="price">0.01 USDT/token</div>
+              <div className="badge">{t('fundraising.presale.badge')}</div>
+              <h3>{t('fundraising.presale.title')}</h3>
+              <div className="percentage">
+                {t('fundraising.presale.percentage')}
+              </div>
+              <div className="price">{t('fundraising.presale.price')}</div>
               <div className="description">
-                Early supporter round for platform development and ecosystem
-                building. Limited supply at the lowest price.
+                {t('fundraising.presale.description')}
               </div>
             </SaleCard>
 
             <SaleCard $variant="public" data-aos="zoom-in" data-aos-delay="300">
-              <div className="badge">Public Round</div>
-              <h3>Public Sale</h3>
-              <div className="percentage">5%</div>
-              <div className="price">0.02 USDT/token</div>
+              <div className="badge">{t('fundraising.publicSale.badge')}</div>
+              <h3>{t('fundraising.publicSale.title')}</h3>
+              <div className="percentage">
+                {t('fundraising.publicSale.percentage')}
+              </div>
+              <div className="price">{t('fundraising.publicSale.price')}</div>
               <div className="description">
-                Open to the public for marketing initiatives and strategic
-                partnerships. Accessible to all participants.
+                {t('fundraising.publicSale.description')}
               </div>
             </SaleCard>
           </SaleRoundsGrid>
 
           <PurchaseInfo data-aos="fade-up" data-aos-delay="100">
-            <div className="label">Purchase Method</div>
-            <div className="info">
-              Token purchases available via official channels announced by the
-              Moji House platform
-            </div>
+            <div className="label">{t('fundraising.purchase.label')}</div>
+            <div className="info">{t('fundraising.purchase.info')}</div>
           </PurchaseInfo>
 
           <SecuritySection data-aos="fade-up" data-aos-delay="200">
-            <h3>Legal & Security</h3>
+            <h3>{t('fundraising.security.title')}</h3>
 
             <SecurityGrid>
-              <SecurityItem data-aos="flip-left" data-aos-delay="100">
-                <div className="icon">
-                  <IconClipboardCheck size={50} />
-                </div>
-                <div className="title">KYC/AML Compliant</div>
-                <div className="description">
-                  Full compliance with Know Your Customer and Anti-Money
-                  Laundering standards
-                </div>
-              </SecurityItem>
-
-              <SecurityItem data-aos="flip-left" data-aos-delay="200">
-                <div className="icon">
-                  <IconShieldCheck size={50} />
-                </div>
-                <div className="title">Blockchain Verified</div>
-                <div className="description">
-                  All transactions recorded on blockchain and fully auditable
-                </div>
-              </SecurityItem>
-
-              <SecurityItem data-aos="flip-left" data-aos-delay="300">
-                <div className="icon">
-                  <IconDatabaseSearch size={50} />️
-                </div>
-                <div className="title">Smart Contract Audits</div>
-                <div className="description">
-                  Continuous security audits ensuring safety and transparency
-                </div>
-              </SecurityItem>
+              {securityItems.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <SecurityItem
+                    key={index}
+                    data-aos="flip-left"
+                    data-aos-delay={(index + 1) * 100}
+                  >
+                    <div className="icon">
+                      <Icon size={50} />
+                    </div>
+                    <div className="title">{item.title}</div>
+                    <div className="description">{item.description}</div>
+                  </SecurityItem>
+                );
+              })}
             </SecurityGrid>
           </SecuritySection>
         </ContentWrapper>

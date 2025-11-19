@@ -74,7 +74,7 @@ const Brand = styled.div`
     .text-logo {
       margin-top: 20px;
       margin-bottom: 0;
-      font-weight: 900;
+      font-weight: 700;
       gap: 5px;
       font-size: 1.6rem;
       line-height: 1.1em;

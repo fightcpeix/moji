@@ -7,6 +7,7 @@ import {
   SectionSubtitle
 } from '@/components/common/Container';
 import Image from 'next/image';
+import { useI18n } from '@/lib/i18n/context';
 
 const Section = styled.div`
   padding: 100px 0;
@@ -176,7 +177,7 @@ const AllocationCard = styled.div<{ $percentage: number }>`
 
   .percentage {
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 700;
     background: linear-gradient(135deg, #93b2da 0%, #5987c2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -208,42 +209,56 @@ const AllocationCard = styled.div<{ $percentage: number }>`
   }
 `;
 
-const allocations = [
-  { name: 'Airdrop', percentage: 2, note: 'Community Incentive' },
-  {
-    name: 'Presale',
-    percentage: 5,
-    note: '0.01 USDT per token – Development & Ecosystem'
-  },
-  {
-    name: 'Public Sale',
-    percentage: 5,
-    note: '0.02 USDT per token – Marketing & Partnerships'
-  },
-  { name: 'Activate Reward Pool', percentage: 5, note: 'Initial Distribution' },
-  {
-    name: 'Locked Reward Pool (1st)',
-    percentage: 25,
-    note: 'Long-term Ecosystem Reserve'
-  },
-  {
-    name: 'Locked Reward Pool (2nd)',
-    percentage: 25,
-    note: 'Long-term Ecosystem Reserve'
-  },
-  {
-    name: 'Locked Reward Pool (3rd)',
-    percentage: 25,
-    note: 'Long-term Ecosystem Reserve'
-  },
-  { name: 'Team & Advisors', percentage: 8, note: 'Development and Governance' }
-];
-
 export const Tokenomics = () => {
+  const { t } = useI18n();
+
+  const allocations = [
+    {
+      name: t('tokenomics.allocation.items.0.name'),
+      percentage: 2,
+      note: t('tokenomics.allocation.items.0.note')
+    },
+    {
+      name: t('tokenomics.allocation.items.1.name'),
+      percentage: 5,
+      note: t('tokenomics.allocation.items.1.note')
+    },
+    {
+      name: t('tokenomics.allocation.items.2.name'),
+      percentage: 5,
+      note: t('tokenomics.allocation.items.2.note')
+    },
+    {
+      name: t('tokenomics.allocation.items.3.name'),
+      percentage: 5,
+      note: t('tokenomics.allocation.items.3.note')
+    },
+    {
+      name: t('tokenomics.allocation.items.4.name'),
+      percentage: 25,
+      note: t('tokenomics.allocation.items.4.note')
+    },
+    {
+      name: t('tokenomics.allocation.items.5.name'),
+      percentage: 25,
+      note: t('tokenomics.allocation.items.5.note')
+    },
+    {
+      name: t('tokenomics.allocation.items.6.name'),
+      percentage: 25,
+      note: t('tokenomics.allocation.items.6.note')
+    },
+    {
+      name: t('tokenomics.allocation.items.7.name'),
+      percentage: 8,
+      note: t('tokenomics.allocation.items.7.note')
+    }
+  ];
+
   return (
     <Section id="tokenomics">
       <Container>
-        <StyledSectionTitle>Tokenomics</StyledSectionTitle>
+        <StyledSectionTitle>{t('tokenomics.title')}</StyledSectionTitle>
         <div className="flex justify-center">
           <div className="relative w-[300px] h-[300px] max-w-full">
             <Image
@@ -255,46 +270,45 @@ export const Tokenomics = () => {
           </div>
         </div>
         <StyledSectionSubtitle>
-          The total supply corresponds to the global population — based on the
-          concept that every person deserves one home
+          {t('tokenomics.subtitle')}
         </StyledSectionSubtitle>
 
         <TokenInfoGrid>
           <InfoCard>
-            <div className="label">Token Symbol</div>
-            <div className="value">MOJI</div>
+            <div className="label">{t('tokenomics.info.symbol.label')}</div>
+            <div className="value">{t('tokenomics.info.symbol.value')}</div>
             <div className="description">
-              Official token for the Moji House ecosystem
+              {t('tokenomics.info.symbol.description')}
             </div>
           </InfoCard>
 
           <InfoCard>
-            <div className="label">Total Supply</div>
-            <div className="value">8.2B+</div>
+            <div className="label">{t('tokenomics.info.supply.label')}</div>
+            <div className="value">{t('tokenomics.info.supply.value')}</div>
             <div className="description">
-              Minted until reaching 8,205,134,767 tokens
+              {t('tokenomics.info.supply.description')}
             </div>
           </InfoCard>
 
           <InfoCard>
-            <div className="label">Transaction Tax</div>
-            <div className="value">7%</div>
+            <div className="label">{t('tokenomics.info.tax.label')}</div>
+            <div className="value">{t('tokenomics.info.tax.value')}</div>
             <div className="description">
-              Automatically redirected to Reward Pool for sustainability
+              {t('tokenomics.info.tax.description')}
             </div>
           </InfoCard>
 
           <InfoCard>
-            <div className="label">Token Burn</div>
-            <div className="value">Progressive</div>
+            <div className="label">{t('tokenomics.info.burn.label')}</div>
+            <div className="value">{t('tokenomics.info.burn.value')}</div>
             <div className="description">
-              Targeting 25% remaining supply (1 household per 4 people)
+              {t('tokenomics.info.burn.description')}
             </div>
           </InfoCard>
         </TokenInfoGrid>
 
         <AllocationSection>
-          <AllocationTitle>Token Allocation</AllocationTitle>
+          <AllocationTitle>{t('tokenomics.allocation.title')}</AllocationTitle>
           <AllocationGrid>
             {allocations.map((allocation, index) => (
               <AllocationCard key={index} $percentage={allocation.percentage}>

@@ -7,6 +7,7 @@ import {
   SectionSubtitle
 } from '@/components/common/Container';
 import { IconGift, IconDiamond, IconDeviceIpadStar } from '@tabler/icons-react';
+import { useI18n } from '@/lib/i18n/context';
 
 const Section = styled.div`
   padding: 100px 0;
@@ -137,54 +138,55 @@ const DetailList = styled.ul`
   }
 `;
 
-const features = [
-  {
-    icon: IconDeviceIpadStar,
-    title: 'Voting System',
-    description:
-      'Users vote for interesting property listings using MOJI Tokens.',
-    details: [
-      '1 MOJI = 1 Vote',
-      'Distributed to Staking Pool',
-      'Returns to Reward Pool',
-      'Platform development allocation'
-    ]
-  },
-  {
-    icon: IconGift,
-    title: 'Reward System',
-    description: 'Earn MOJI Tokens for posting verified real estate listings.',
-    details: [
-      'Rewards for verified listings',
-      'Incentivizes quality content',
-      'Automated distribution',
-      'Transparent tracking'
-    ]
-  },
-  {
-    icon: IconDiamond,
-    title: 'Staking System',
-    description:
-      'Stake MOJI Tokens to earn additional rewards and support the ecosystem.',
-    details: [
-      'Long-term engagement rewards',
-      'Token stability promotion',
-      'Flexible staking periods',
-      'Compound earnings'
-    ]
-  }
-];
+const featuresIcons = [IconDeviceIpadStar, IconGift, IconDiamond];
 
 export const BlockchainSection = () => {
+  const { t } = useI18n();
+
+  const features = [
+    {
+      icon: featuresIcons[0],
+      title: t('blockchainSection.features.0.title'),
+      description: t('blockchainSection.features.0.description'),
+      details: [
+        t('blockchainSection.features.0.details.0'),
+        t('blockchainSection.features.0.details.1'),
+        t('blockchainSection.features.0.details.2'),
+        t('blockchainSection.features.0.details.3')
+      ]
+    },
+    {
+      icon: featuresIcons[1],
+      title: t('blockchainSection.features.1.title'),
+      description: t('blockchainSection.features.1.description'),
+      details: [
+        t('blockchainSection.features.1.details.0'),
+        t('blockchainSection.features.1.details.1'),
+        t('blockchainSection.features.1.details.2'),
+        t('blockchainSection.features.1.details.3')
+      ]
+    },
+    {
+      icon: featuresIcons[2],
+      title: t('blockchainSection.features.2.title'),
+      description: t('blockchainSection.features.2.description'),
+      details: [
+        t('blockchainSection.features.2.details.0'),
+        t('blockchainSection.features.2.details.1'),
+        t('blockchainSection.features.2.details.2'),
+        t('blockchainSection.features.2.details.3')
+      ]
+    }
+  ];
+
   return (
     <Section>
       <Container>
         <SectionTitle data-aos="fade-down">
-          Blockchain & Smart Contracts
+          {t('blockchainSection.title')}
         </SectionTitle>
         <SectionSubtitle data-aos="fade-up" data-aos-delay="100">
-          Moji House utilizes blockchain technology to record and automate all
-          transactions securely and transparently through Smart Contracts
+          {t('blockchainSection.subtitle')}
         </SectionSubtitle>
 
         <FeaturesGrid>
