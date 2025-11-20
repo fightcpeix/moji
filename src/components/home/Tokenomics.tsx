@@ -6,12 +6,11 @@ import {
   SectionTitle,
   SectionSubtitle
 } from '@/components/common/Container';
-import Image from 'next/image';
 import { useI18n } from '@/lib/i18n/context';
 
 const Section = styled.div`
   padding: 100px 0;
-  background: linear-gradient(135deg, rgb(26, 26, 26) 0%, rgb(45, 45, 45) 100%);
+  background: #050f19;
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   color: white;
@@ -19,19 +18,20 @@ const Section = styled.div`
   overflow: hidden;
   scroll-margin-top: 80px;
 
-  &::before {
+  &::after {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 1000px;
-    height: 1000px;
-    background: radial-gradient(
-      circle,
-      rgba(89, 135, 194, 0.15) 0%,
-      transparent 70%
-    );
-    border-radius: 50%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/cubehome.webp');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 0;
+    pointer-events: none;
   }
 
   @media (max-width: 768px) {
@@ -42,10 +42,16 @@ const Section = styled.div`
 const StyledSectionTitle = styled(SectionTitle)`
   color: white;
   -webkit-text-fill-color: white;
+  position: relative;
+  z-index: 10;
+  opacity: 1;
 `;
 
 const StyledSectionSubtitle = styled(SectionSubtitle)`
   color: #cdd4d6;
+  position: relative;
+  z-index: 10;
+  opacity: 1;
 `;
 
 const TokenInfoGrid = styled.div`
@@ -53,6 +59,8 @@ const TokenInfoGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-bottom: 4rem;
+  position: relative;
+  z-index: 10;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -60,17 +68,38 @@ const TokenInfoGrid = styled.div`
 `;
 
 const InfoCard = styled.div`
-  background: rgba(255, 255, 255, 0.05);
+  background-size: cover;
   backdrop-filter: blur(10px);
-  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
   border-radius: 16px;
   border: 1px solid rgba(147, 178, 218, 0.2);
   transition: all 0.3s ease;
+  opacity: 1;
+
+  .contents {
+    z-index: 10;
+    position: relative;
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s;
+  }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(89, 135, 194, 0.2);
+    color: white;
+    &::after {
+      backdrop-filter: blur(20px);
+    }
   }
 
   .label {
@@ -88,18 +117,16 @@ const InfoCard = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin-bottom: 0.5rem;
   }
 
   .description {
-    font-size: 0.95rem;
-    color: #cdd4d6;
-    margin-top: 0.5rem;
-    line-height: 1.6;
+    font-size: 0.9em;
+    color: #abadaf;
+    line-height: 1.5;
   }
 
   @media (max-width: 640px) {
-    padding: 1.5rem;
-
     .value {
       font-size: 1.5rem;
     }
@@ -259,50 +286,48 @@ export const Tokenomics = () => {
     <Section id="tokenomics">
       <Container>
         <StyledSectionTitle>{t('tokenomics.title')}</StyledSectionTitle>
-        <div className="flex justify-center">
-          <div className="relative w-[300px] h-[300px] max-w-full">
-            <Image
-              fill
-              src="/images/texture/cube-light2.webp"
-              style={{ objectFit: 'contain' }}
-              alt="tokenomics"
-            />
-          </div>
-        </div>
         <StyledSectionSubtitle>
           {t('tokenomics.subtitle')}
         </StyledSectionSubtitle>
 
         <TokenInfoGrid>
           <InfoCard>
-            <div className="label">{t('tokenomics.info.symbol.label')}</div>
-            <div className="value">{t('tokenomics.info.symbol.value')}</div>
-            <div className="description">
-              {t('tokenomics.info.symbol.description')}
+            <div className="contents">
+              <div className="label">{t('tokenomics.info.symbol.label')}</div>
+              <div className="value">{t('tokenomics.info.symbol.value')}</div>
+              <div className="description">
+                {t('tokenomics.info.symbol.description')}
+              </div>
             </div>
           </InfoCard>
 
           <InfoCard>
-            <div className="label">{t('tokenomics.info.supply.label')}</div>
-            <div className="value">{t('tokenomics.info.supply.value')}</div>
-            <div className="description">
-              {t('tokenomics.info.supply.description')}
+            <div className="contents">
+              <div className="label">{t('tokenomics.info.supply.label')}</div>
+              <div className="value">{t('tokenomics.info.supply.value')}</div>
+              <div className="description">
+                {t('tokenomics.info.supply.description')}
+              </div>
             </div>
           </InfoCard>
 
           <InfoCard>
-            <div className="label">{t('tokenomics.info.tax.label')}</div>
-            <div className="value">{t('tokenomics.info.tax.value')}</div>
-            <div className="description">
-              {t('tokenomics.info.tax.description')}
+            <div className="contents">
+              <div className="label">{t('tokenomics.info.tax.label')}</div>
+              <div className="value">{t('tokenomics.info.tax.value')}</div>
+              <div className="description">
+                {t('tokenomics.info.tax.description')}
+              </div>
             </div>
           </InfoCard>
 
           <InfoCard>
-            <div className="label">{t('tokenomics.info.burn.label')}</div>
-            <div className="value">{t('tokenomics.info.burn.value')}</div>
-            <div className="description">
-              {t('tokenomics.info.burn.description')}
+            <div className="contents">
+              <div className="label">{t('tokenomics.info.burn.label')}</div>
+              <div className="value">{t('tokenomics.info.burn.value')}</div>
+              <div className="description">
+                {t('tokenomics.info.burn.description')}
+              </div>
             </div>
           </InfoCard>
         </TokenInfoGrid>

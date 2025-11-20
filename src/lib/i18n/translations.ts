@@ -99,7 +99,7 @@ export const translations = {
         supply: {
           label: 'Total Supply',
           value: '8.2B+',
-          description: 'Minted until reaching 8,205,134,767 tokens'
+          description: 'The tokens will be minted gradually according to the platform’s rewards until the total reaches 8,205,134,767 tokens, matching the world population. After that, the burning of tokens will begin.'
         },
         tax: {
           label: 'Transaction Tax',
@@ -442,7 +442,7 @@ export const translations = {
         supply: {
           label: 'จำนวนทั้งหมด',
           value: '8.2B+',
-          description: 'สร้างจนถึง 8,205,134,767 โทเค็น'
+          description: 'โทเค็นจะถูกสร้างเพิ่มขึ้นอย่างค่อยเป็นค่อยไปตามระบบรางวัลของแพลตฟอร์ม จนกว่าจะครบ 8,205,134,767 โทเค็น ซึ่งเท่ากับจำนวนประชากรโลก หลังจากนั้นจะเริ่มกระบวนการเผาโทเค็น'
         },
         tax: {
           label: 'ภาษีธุรกรรม',
