@@ -307,7 +307,7 @@ export const translations = {
         },
         {
           role: 'Strategy',
-          name: 'Market Research Lead',
+          name: 'CRO & Market Research Lead',
           description: 'Platform strategy and market analysis specialist'
         }
       ],
@@ -647,7 +647,7 @@ export const translations = {
         },
         {
           role: 'กลยุทธ์',
-          name: 'หัวหน้าวิจัยตลาด',
+          name: 'CRO และหัวหน้าฝ่ายวิจัยตลาด',
           description: 'ผู้เชี่ยวชาญด้านกลยุทธ์แพลตฟอร์มและการวิเคราะห์ตลาด'
         }
       ],
