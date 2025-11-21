@@ -40,17 +40,7 @@ const FeatureCard = styled.div<{ $index: number }>`
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
-  opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 0.6s ease forwards;
-  animation-delay: ${(props) => props.$index * 0.15}s;
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   &::before {
     content: '';
@@ -66,7 +56,7 @@ const FeatureCard = styled.div<{ $index: number }>`
   }
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(20px);
     box-shadow: 0 12px 40px rgba(89, 135, 194, 0.12);
     border-color: #93b2da;
 
@@ -193,12 +183,7 @@ export const BlockchainSection = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <FeatureCard
-                key={index}
-                $index={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
+              <FeatureCard key={index} $index={index}>
                 <div className="flex flex-col justify-center text-center items-center">
                   <div className="icon-wrapper">
                     <Icon size={40} stroke={2} />

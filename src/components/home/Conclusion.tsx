@@ -2,8 +2,8 @@
 
 import styled from 'styled-components';
 import { Container } from '@/components/common/Container';
-import { IconBox, IconHome, IconWorld } from '@tabler/icons-react';
 import { useI18n } from '@/lib/i18n/context';
+import Image from 'next/image';
 
 const Section = styled.div`
   padding: 120px 0;
@@ -73,13 +73,13 @@ const Content = styled.div`
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 `;
 
 const Title = styled.h2`
-  font-size: 3.5rem;
-  font-weight: 900;
+  font-size: 3rem;
+  font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 2rem;
   line-height: 1.2;
@@ -101,10 +101,10 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #6b7280;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 
   @media (max-width: 640px) {
     font-size: 1.125rem;
@@ -112,22 +112,19 @@ const Description = styled.p`
 `;
 
 const Mission = styled.div`
-  background: white;
-  padding: 3rem;
   border-radius: 24px;
-  margin: 3rem 0;
-  box-shadow: 0 4px 20px rgba(89, 135, 194, 0.08);
+  margin: 1rem 0;
   position: relative;
   overflow: hidden;
 
   p {
-    font-size: 1.25rem;
-    color: #1a1a1a;
+    font-size: 1.2rem;
+    color: #6b7280;
     line-height: 1.8;
     margin: 0;
 
     .bold {
-      font-weight: 700;
+      font-weight: 600;
       background: linear-gradient(135deg, #5987c2 0%, #93b2da 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -149,8 +146,8 @@ const CTASection = styled.div`
 `;
 
 const CTATitle = styled.h3`
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 2rem;
 
@@ -285,10 +282,10 @@ const FeatureItem = styled.div<{ $index: number }>`
   }
 
   .feature-title {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 600;
     color: #1a1a1a;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
   }
 
   .feature-desc {
@@ -314,7 +311,7 @@ const FeatureItem = styled.div<{ $index: number }>`
 `;
 
 const Tagline = styled.div`
-  margin-top: 4rem;
+  margin-top: 1rem;
   padding: 3rem;
   border-radius: 24px;
   position: relative;
@@ -336,7 +333,7 @@ const Tagline = styled.div`
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #000000;
     margin: 0;
@@ -355,9 +352,30 @@ const Tagline = styled.div`
 `;
 
 const featuresIcons = [
-  <IconHome size={60} key="iconHome" />,
-  <IconBox size={60} key="iconBox" />,
-  <IconWorld size={60} key="iconWord" />
+  <Image
+    src="/images/box-home.webp"
+    width={300}
+    height={300}
+    alt="home"
+    key="h1"
+    style={{ objectFit: 'contain' }}
+  />,
+  <Image
+    src="/images/box-crypto.webp"
+    width={300}
+    height={300}
+    alt="home"
+    key="h1"
+    style={{ objectFit: 'contain' }}
+  />,
+  <Image
+    src="/images/box-word.webp"
+    width={300}
+    height={300}
+    alt="home"
+    key="h1"
+    style={{ objectFit: 'contain' }}
+  />
 ];
 
 export const Conclusion = () => {

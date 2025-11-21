@@ -45,7 +45,7 @@ const SaleCard = styled.div<{ $variant: 'presale' | 'public' }>`
     props.$variant === 'presale'
       ? 'linear-gradient(135deg, #fff 0%, #d4e5f1 100%)'
       : 'linear-gradient(135deg, #fff 0%, #e3eef7 100%)'};
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 20px;
   ${(props) => (props.$variant === 'presale' ? '#5987c2' : '#93b2da')};
   position: relative;
@@ -93,12 +93,12 @@ const SaleCard = styled.div<{ $variant: 'presale' | 'public' }>`
     font-size: 2rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 1rem;
   }
 
   .percentage {
     font-size: 5rem;
     font-weight: 900;
+    line-height: 1em;
     color: ${(props) => (props.$variant === 'presale' ? '#ffa000' : '#93b2da')};
   }
 
@@ -134,11 +134,6 @@ const SaleCard = styled.div<{ $variant: 'presale' | 'public' }>`
 
 const SecuritySection = styled.div`
   margin-top: 60px;
-  background: linear-gradient(
-    135deg,
-    #e8f1f8 0%,
-    rgba(212, 229, 241, 0.53) 100%
-  );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 3rem;
@@ -300,8 +295,10 @@ export const Fundraising = () => {
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              <div className="badge">{t('fundraising.presale.badge')}</div>
-              <h3>{t('fundraising.presale.title')}</h3>
+              <div className="flex flex-row items-center justify-between">
+                <h3>{t('fundraising.presale.title')}</h3>
+                <div className="badge">{t('fundraising.presale.badge')}</div>
+              </div>
               <div className="percentage">
                 {t('fundraising.presale.percentage')}
               </div>
@@ -312,8 +309,10 @@ export const Fundraising = () => {
             </SaleCard>
 
             <SaleCard $variant="public" data-aos="zoom-in" data-aos-delay="300">
-              <div className="badge">{t('fundraising.publicSale.badge')}</div>
-              <h3>{t('fundraising.publicSale.title')}</h3>
+              <div className="flex flex-row items-center justify-between">
+                <h3>{t('fundraising.publicSale.title')}</h3>
+                <div className="badge">{t('fundraising.publicSale.badge')}</div>
+              </div>
               <div className="percentage">
                 {t('fundraising.publicSale.percentage')}
               </div>

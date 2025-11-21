@@ -9,30 +9,12 @@ import {
 import { useI18n } from '@/lib/i18n/context';
 
 const Section = styled.div`
-  padding: 100px 0;
-  background: #050f19;
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  padding: 0;
+  background-image: url('/images/cubehome.webp');
+  background-position: left top;
   color: white;
   position: relative;
   overflow: hidden;
-  scroll-margin-top: 80px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/images/cubehome.webp');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 1;
-    z-index: 0;
-    pointer-events: none;
-  }
 
   @media (max-width: 768px) {
     padding: 60px 0;
@@ -45,22 +27,29 @@ const StyledSectionTitle = styled(SectionTitle)`
   position: relative;
   z-index: 10;
   opacity: 1;
+  margin-top: 50px;
 `;
 
 const StyledSectionSubtitle = styled(SectionSubtitle)`
-  color: #cdd4d6;
+  color: #eee;
   position: relative;
   z-index: 10;
+  font-weight: 400;
+  font-size: 1.5em;
   opacity: 1;
+  @media screen and (max-width: 650px) {
+    font-size: 1.2em;
+  }
 `;
 
 const TokenInfoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 2.4rem;
   margin-bottom: 4rem;
   position: relative;
   z-index: 10;
+  padding: 40px 0;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -69,12 +58,13 @@ const TokenInfoGrid = styled.div`
 
 const InfoCard = styled.div`
   background-size: cover;
-  backdrop-filter: blur(10px);
+  background: #2e2e2e4f;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
   position: relative;
   overflow: hidden;
   padding: 1.5rem;
   border-radius: 16px;
-  border: 1px solid rgba(147, 178, 218, 0.2);
   transition: all 0.3s ease;
   opacity: 1;
 
@@ -83,28 +73,13 @@ const InfoCard = styled.div`
     position: relative;
   }
 
-  &::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(10px);
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    transition: 0.3s;
-  }
-
   &:hover {
     color: white;
-    &::after {
-      backdrop-filter: blur(20px);
-    }
   }
 
   .label {
     font-size: 0.875rem;
-    color: #93b2da;
+    color: white;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 0.5rem;
@@ -113,7 +88,7 @@ const InfoCard = styled.div`
   .value {
     font-size: 2rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #93b2da 0%, #5987c2 100%);
+    background: linear-gradient(135deg, #5ea2fb 0%, white 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -122,7 +97,7 @@ const InfoCard = styled.div`
 
   .description {
     font-size: 0.9em;
-    color: #abadaf;
+    color: #bbb;
     line-height: 1.5;
   }
 
@@ -140,11 +115,12 @@ const AllocationSection = styled.div`
 `;
 
 const AllocationTitle = styled.h3`
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
   color: white;
+  text-shadow: 3px 3px 3px #1a1a1a;
 
   @media (max-width: 640px) {
     font-size: 1.5rem;
@@ -153,53 +129,41 @@ const AllocationTitle = styled.h3`
 
 const AllocationGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.4rem;
+  padding-bottom: 6rem;
 `;
 
 const AllocationCard = styled.div<{ $percentage: number }>`
   // background: url('/images/cards/home1.webp') center center no-repeat;
   background-size: cover;
+  background: rgba(53, 53, 53, 0.45);
   backdrop-filter: blur(10px);
+
   .contents {
     z-index: 10;
   }
-  &::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(10px);
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    transition: 0.3s;
-  }
+
   padding: 1.5rem;
   border-radius: 16px;
-  border: 1px solid rgba(147, 178, 218, 0.2);
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
 
-  &::before {
+  .line-percent {
     content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: calc(100% - 20px);
-    height: 6px;
+    position: relative;
+    width: 100%;
+    height: 4px;
     border-radius: 10px;
-    background: linear-gradient(90deg, #5987c2 0%, #93b2da 100%);
+    background: linear-gradient(90deg, #5987c2 0%, white 100%);
     transform: scaleX(${(props) => props.$percentage / 100});
     transform-origin: left;
+    margin-bottom: 10px;
   }
 
   &:hover {
     color: white;
-    &::after {
-      backdrop-filter: blur(20px);
-    }
   }
 
   .percentage {
@@ -209,7 +173,7 @@ const AllocationCard = styled.div<{ $percentage: number }>`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .allocation-name {
@@ -221,7 +185,7 @@ const AllocationCard = styled.div<{ $percentage: number }>`
 
   .allocation-note {
     font-size: 0.9em;
-    color: #abadaf;
+    color: #bbb;
     line-height: 1.5;
   }
 
@@ -339,6 +303,7 @@ export const Tokenomics = () => {
               <AllocationCard key={index} $percentage={allocation.percentage}>
                 <div className="contents">
                   <div className="percentage">{allocation.percentage}%</div>
+                  <div className="line-percent"></div>
                   <div className="allocation-name">{allocation.name}</div>
                   <div className="allocation-note">{allocation.note}</div>
                 </div>
