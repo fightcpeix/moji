@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Container } from '@/components/common/Container';
 import { useI18n } from '@/lib/i18n/context';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Section = styled.div`
   padding: 120px 0;
@@ -447,9 +448,11 @@ export const Conclusion = () => {
           <CTASection data-aos="fade-up" data-aos-delay="100">
             <CTATitle>{t('conclusion.cta.title')}</CTATitle>
             <CTAButtons>
-              <Button $variant="primary">
-                <span>{t('conclusion.cta.primaryButton')}</span>
-              </Button>
+              <Link href="https://public.moji.house" target="_blank">
+                <Button $variant="primary">
+                  <span>{t('conclusion.cta.primaryButton')}</span>
+                </Button>
+              </Link>
               <Button $variant="secondary">
                 <span>{t('conclusion.cta.secondaryButton')}</span>
               </Button>

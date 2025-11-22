@@ -169,7 +169,7 @@ const MobileMenuStyle = styled.div<{ $show: boolean }>`
   }
 `;
 
-const MobileMenuItem = styled.a`
+const MobileMenuItem = styled.div`
   padding: 16px 20px;
   width: 100%;
   display: flex;
@@ -292,9 +292,9 @@ const Navbar = () => {
             </NavLink>
           ))}
           <LanguageSwitcher />
-          <CTAButton onClick={() => scrollToSection('fundraising')}>
-            Join Presale
-          </CTAButton>
+          <Link href="https://public.moji.house" target="_blank">
+            <CTAButton>Join Presale</CTAButton>
+          </Link>
         </div>
       </NavbarStyle>
 
@@ -307,9 +307,12 @@ const Navbar = () => {
         <div style={{ padding: '16px 20px' }}>
           <LanguageSwitcher />
         </div>
-        <MobileMenuItem onClick={() => scrollToSection('fundraising')}>
-          <strong>Join Presale</strong>
-        </MobileMenuItem>
+
+        <Link href="https://public.moji.house" target="_blank">
+          <MobileMenuItem>
+            <strong>Join Presale</strong>
+          </MobileMenuItem>
+        </Link>
       </MobileMenuStyle>
     </>
   );
