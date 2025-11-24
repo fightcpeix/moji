@@ -8,8 +8,8 @@ const MenuButtonStyle = styled.div<{ $isShow: boolean }>`
   align-items: center;
   justify-content: center;
   gap: 6px;
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
   cursor: pointer;
   position: relative;
 
@@ -20,7 +20,7 @@ const MenuButtonStyle = styled.div<{ $isShow: boolean }>`
 
   span {
     width: 100%;
-    height: 3px;
+    height: 4px;
     background: #5987c2;
     transition: 0.2s;
     border-radius: 3px;

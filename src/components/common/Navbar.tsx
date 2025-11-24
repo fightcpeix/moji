@@ -3,9 +3,10 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import MenuButton from '@/components/common/MenuButton';
 import Image from 'next/image';
 import { LanguageSwitcher } from '@/components/common/LanguageSwitcher';
+import { Divider } from '@mui/material';
+import MenuButton from '@/components/common/MenuButton';
 
 const NavbarStyle = styled.div<{
   $showMobile: boolean;
@@ -14,6 +15,7 @@ const NavbarStyle = styled.div<{
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   position: fixed;
   width: 100%;
@@ -170,15 +172,15 @@ const MobileMenuStyle = styled.div<{ $show: boolean }>`
 `;
 
 const MobileMenuItem = styled.div`
-  padding: 16px 20px;
+  padding: 10px;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: #5987c2;
+  color: #74889f;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 16px;
   border-radius: 12px;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -190,6 +192,18 @@ const MobileMenuItem = styled.div`
 
   &:active {
     transform: scale(0.98);
+  }
+
+  strong {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 40px;
+    color: white;
+    background: #2e6ad5;
+    padding: 14px 20px;
+    border-radius: 16px;
+    width: 100%;
+    text-align: center;
   }
 `;
 
@@ -260,15 +274,6 @@ const Navbar = () => {
   return (
     <>
       <NavbarStyle $showMobile={isShowMobileMenu} $isScrolled={isScrolled}>
-        <div className="menu-button">
-          <MenuButton
-            open={isShowMobileMenu}
-            handleClick={() => {
-              setShowMobileMenu(!isShowMobileMenu);
-            }}
-          />
-        </div>
-
         <div className="logo">
           <Link href="/">
             <Image
@@ -296,23 +301,41 @@ const Navbar = () => {
             <CTAButton>Join Presale</CTAButton>
           </Link>
         </div>
+
+        <div className="menu-button">
+          <MenuButton
+            open={isShowMobileMenu}
+            handleClick={() => {
+              setShowMobileMenu(!isShowMobileMenu);
+            }}
+          />
+        </div>
       </NavbarStyle>
 
       <MobileMenuStyle $show={isShowMobileMenu}>
-        {menuItems.map((item, index) => (
-          <MobileMenuItem key={index} onClick={() => scrollToSection(item.id)}>
-            {item.name}
-          </MobileMenuItem>
-        ))}
-        <div style={{ padding: '16px 20px' }}>
-          <LanguageSwitcher />
+        <div className="!px-[10px] flex flex-row items-center justify-between">
+          <span className="opacity-70 text-[#83a6d3]">Language</span>
+          <div>
+            <LanguageSwitcher />
+          </div>
         </div>
+        <Divider className="opacity-50" />
+        <div className="mobile-menu">
+          {menuItems.map((item, index) => (
+            <MobileMenuItem
+              key={index}
+              onClick={() => scrollToSection(item.id)}
+            >
+              {item.name}
+            </MobileMenuItem>
+          ))}
 
-        <Link href="https://public.moji.house" target="_blank">
-          <MobileMenuItem>
-            <strong>Join Presale</strong>
-          </MobileMenuItem>
-        </Link>
+          <Link href="https://public.moji.house" target="_blank">
+            <MobileMenuItem>
+              <strong>Join Presale</strong>
+            </MobileMenuItem>
+          </Link>
+        </div>
       </MobileMenuStyle>
     </>
   );

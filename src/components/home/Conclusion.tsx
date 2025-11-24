@@ -159,10 +159,14 @@ const CTATitle = styled.h3`
 
 const CTAButtons = styled.div`
   display: flex;
+  flex-direction: row;
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 2rem;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
 `;
 
 const Button = styled.button<{ $variant: 'primary' | 'secondary' }>`
@@ -175,6 +179,9 @@ const Button = styled.button<{ $variant: 'primary' | 'secondary' }>`
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 640px) {
+    flex: 1;
+  }
 
   ${(props) =>
     props.$variant === 'primary'
@@ -453,7 +460,12 @@ export const Conclusion = () => {
                   <span>{t('conclusion.cta.primaryButton')}</span>
                 </Button>
               </Link>
-              <Button $variant="secondary">
+              <Button
+                $variant="secondary"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              >
                 <span>{t('conclusion.cta.secondaryButton')}</span>
               </Button>
             </CTAButtons>
