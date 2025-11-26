@@ -168,69 +168,69 @@ export const translations = {
       },
       phases: [
         {
-          period: '11 Jun 2025',
+          period: 'Q1 2026',
           title: 'Presale',
           description:
             'Initial token sale for early supporters and ecosystem development'
         },
         {
-          period: '30 Sep 2025',
+          period: 'Q2 2026',
           title: 'MVP Platform Launch',
           description: 'Launch minimum viable product with core features'
         },
         {
-          period: '15 Oct 2025',
+          period: 'Q3 2026',
           title: 'Rewards, Voting & Ranking',
           description:
             'Implement community-driven features for property evaluation (Off-chain)'
         },
         {
-          period: '15 Dec 2025',
+          period: 'Q3 2026',
           title: 'Public Sale',
           description:
             'Open token sale to the public with expanded distribution'
         },
         {
-          period: 'Q2 2025',
+          period: 'Q3 2026',
           title: 'Integrated Wallet',
           description: 'Built-in wallet functionality for seamless transactions'
         },
         {
-          period: 'Q3 2025',
+          period: 'Q4 2026',
           title: 'DEX Listing',
           description: 'List MOJI token on decentralized exchanges'
         },
         {
-          period: 'Q3 2025',
+          period: 'Q4 2026',
           title: 'On-chain Systems',
           description:
             'Migrate rewards, burning, and redeem systems to blockchain'
         },
         {
-          period: 'Q3 2025',
+          period: 'Q4 2026',
           title: 'Voting & Staking',
           description:
             'Launch fully decentralized voting and staking mechanisms'
         },
         {
-          period: 'Q4 2025',
+          period: 'Q1 2027',
           title: 'Feature Development',
           description:
             'Continuous platform enhancement and user experience improvements'
         },
         {
-          period: 'Q4 2025',
+          period: 'Q1 2027',
           title: 'Official Launch',
           description:
             'Global marketing campaign and worldwide platform rollout'
         },
         {
-          period: 'Q1 2026',
+          period: 'Q2 2027',
           title: 'Smart Home Integration',
           description: 'Integrate IoT and smart home technology features'
         },
         {
-          period: 'Q2 2026',
+          period: 'Q3 2027',
           title: 'CEX Listing',
           description:
             'List on major centralized exchanges for broader accessibility'
@@ -510,67 +510,67 @@ export const translations = {
       },
       phases: [
         {
-          period: '11 มิ.ย. 2568',
+          period: 'Q1 2569',
           title: 'Presale',
           description:
             'การขายโทเค็นเบื้องต้นสำหรับผู้สนับสนุนรายแรกและการพัฒนาระบบนิเวศ'
         },
         {
-          period: '30 ก.ย. 2568',
+          period: 'Q2 2569',
           title: 'เปิดตัวแพลตฟอร์ม MVP',
           description: 'เปิดตัวผลิตภัณฑ์ต้นแบบ (MVP) พร้อมฟีเจอร์หลัก'
         },
         {
-          period: '15 ต.ค. 2568',
+          period: 'Q3 2569',
           title: 'รางวัล, โหวต และการจัดอันดับ',
           description:
             'เปิดใช้งานฟีเจอร์ที่ขับเคลื่อนโดยชุมชนสำหรับการประเมินทรัพย์สิน (Off-chain)'
         },
         {
-          period: '15 ธ.ค. 2568',
+          period: 'Q3 2569',
           title: 'Public Sale',
           description: 'เปิดขายโทเคนสู่สาธารณะพร้อมการกระจายที่กว้างขึ้น'
         },
         {
-          period: 'Q2 2568',
+          period: 'Q3 2569',
           title: 'กระเป๋าเงินแบบบูรณาการ',
           description:
             'เพิ่มฟังก์ชันกระเป๋าเงินในตัวสำหรับการทำธุรกรรมที่ราบรื่น'
         },
         {
-          period: 'Q3 2568',
+          period: 'Q4 2569',
           title: 'ลงทะเบียน DEX',
           description: 'ลงทะเบียนโทเค็น MOJI บนตลาดแลกเปลี่ยนแบบกระจาย'
         },
         {
-          period: 'Q3 2568',
+          period: 'Q4 2569',
           title: 'ระบบ On-chain',
           description:
             'ย้ายระบบรางวัล การเผาโทเค็นและระบบแลกเปลี่ยนไปยังบล็อกเชน'
         },
         {
-          period: 'Q3 2568',
+          period: 'Q4 2569',
           title: 'โหวตและ Staking',
           description:
             'เปิดตัวกลไกการโหวตและ Staking แบบกระจายอำนาจอย่างเต็มรูปแบบ'
         },
         {
-          period: 'Q4 2568',
+          period: 'Q1 2570',
           title: 'การพัฒนาคุณสมบัติ',
           description: 'พัฒนาแพลตฟอร์มและปรับปรุงประสบการณ์ผู้ใช้อย่างต่อเนื่อง'
         },
         {
-          period: 'Q4 2568',
+          period: 'Q1 2570',
           title: 'เปิดตัวอย่างเป็นทางการ',
           description: 'เปิดตัวอย่างเป็นทางการ พร้อมแคมเปญการตลาดทั่วโลก'
         },
         {
-          period: 'Q1 2569',
+          period: 'Q2 2570',
           title: 'บูรณาการสมาร์ทโฮม',
           description: 'รวมเทคโนโลยี IoT และฟีเจอร์สมาร์ทโฮม'
         },
         {
-          period: 'Q2 2569',
+          period: 'Q3 2570',
           title: 'ลงทะเบียน CEX',
           description:
             'ลงทะเบียนบนตลาดแลกเปลี่ยนแบบรวมศูนย์รายใหญ่เพื่อเข้าถึงผู้ใช้ได้กว้างขึ้น'
