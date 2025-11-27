@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { LanguageSwitcher } from '@/components/common/LanguageSwitcher';
 import { Divider } from '@mui/material';
 import MenuButton from '@/components/common/MenuButton';
+import { useRouter } from 'next/navigation';
 
 const NavbarStyle = styled.div<{
   $showMobile: boolean;
@@ -218,6 +219,7 @@ const menuItems = [
 const Navbar = () => {
   const [isShowMobileMenu, setShowMobileMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -296,6 +298,9 @@ const Navbar = () => {
               {item.name}
             </NavLink>
           ))}
+          <NavLink onClick={() => router.push('/store-moji')}>
+              How to store MOJI
+            </NavLink>
           <LanguageSwitcher />
           <Link href="https://public.moji.house" target="_blank">
             <CTAButton>Join Presale</CTAButton>
@@ -329,6 +334,10 @@ const Navbar = () => {
               {item.name}
             </MobileMenuItem>
           ))}
+
+          <MobileMenuItem onClick={() => router.push('/store-moji')}>
+            How to store MOJI
+          </MobileMenuItem>
 
           <Link href="https://public.moji.house" target="_blank">
             <MobileMenuItem>

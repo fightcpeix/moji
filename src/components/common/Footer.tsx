@@ -9,6 +9,8 @@ const FooterWrapper = styled.footer`
   color: white;
   padding: 60px 0 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 20;
+  position: relative;
 `;
 
 const FooterContent = styled(Container)`

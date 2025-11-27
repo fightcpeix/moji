@@ -342,6 +342,48 @@ export const translations = {
       },
       tagline:
         '"Join us in building a limitless real estate ecosystem — the future of decentralized property ownership starts here."'
+    },
+    storeMoji: {
+      title: '6 Easy Steps to Store MOJI',
+      subtitle: 'Using USDT and BNB',
+      intro:
+        'Start by purchasing the desired amount of USDT and a small amount of BNB (just 0.001 for gas fees) from any exchange. Once you have made the purchase, follow these simple steps:',
+      steps: [
+        {
+          title: 'Connect Wallet',
+          description:
+            'Visit https://public.moji.house and click the Connect Wallet button.'
+        },
+        {
+          title: 'Login with Google',
+          description:
+            'Choose to log in with Google by clicking Continue with Google, then select the email you wish to use.'
+        },
+        {
+          title: 'Click Your Address',
+          description:
+            'After logging in successfully, click your address at the top right corner of the website.'
+        },
+        {
+          title: 'Select Your Email',
+          description:
+            'Click on your email address (as shown in the example image) — a pop-up window will appear.'
+        },
+        {
+          title: 'View Address',
+          description: 'From the pop-up, select View address.'
+        },
+        {
+          title: 'Copy & Transfer',
+          description:
+            'Click Copy to copy your address, then paste it into the destination field when transferring USDT and BNB to your MOJI wallet.'
+        }
+      ],
+      note: {
+        title: 'Important Note',
+        description:
+          'Whenever you transfer USDT and BNB, please select the BNB Smart Chain (BEP20) network only.'
+      }
     }
   },
   th: {
@@ -682,6 +724,48 @@ export const translations = {
       },
       tagline:
         '"ร่วมสร้างระบบนิเวศอสังหาริมทรัพย์ไร้ขีดจำกัดกับเรา — อนาคตของความเป็นเจ้าของทรัพย์สินแบบกระจายอำนาจเริ่มต้นที่นี่"'
+    },
+    storeMoji: {
+      title: '6 ขั้นตอนง่ายๆ เก็บ MOJI',
+      subtitle: 'ด้วย USDT และ BNB',
+      intro:
+        'เริ่มต้นด้วยการซื้อเหรียญ USDT ตามจำนวนที่ต้องการและซื้อ BNB เพียง 0.001 (เพื่อเป็นค่า Gas) จาก Exchange อื่นๆ เมื่อซื้อเรียบร้อยแล้ว ให้ทำตามขั้นตอนดังนี้:',
+      steps: [
+        {
+          title: 'เชื่อมต่อกระเป๋าเงิน',
+          description:
+            'เข้าเว็บไซต์ https://public.moji.house แล้วกดปุ่ม Connect Wallet'
+        },
+        {
+          title: 'ล็อกอินด้วย Google',
+          description:
+            'เลือกล็อกอินด้วย Google โดยกดปุ่ม Continue with Google แล้วเลือกอีเมลที่ต้องการใช้'
+        },
+        {
+          title: 'คลิกที่ Address ของคุณ',
+          description:
+            'เมื่อล็อกอินสำเร็จ ให้คลิกที่ Address ของคุณ ที่มุมขวาบนของหน้าเว็บ'
+        },
+        {
+          title: 'เลือกอีเมลของคุณ',
+          description:
+            'กดที่อีเมลของคุณ (ตามภาพ) จะมีหน้าต่างป๊อปอัปแสดงขึ้น'
+        },
+        {
+          title: 'ดู Address',
+          description: 'เลือก View address จากป๊อปอัป'
+        },
+        {
+          title: 'คัดลอกและโอน',
+          description:
+            'กด Copy เพื่อคัดลอก Address ของคุณ แล้วนำไปวางที่ช่องปลายทางการโอน เพื่อโอน USDT และ BNB เข้ามายังกระเป๋า MOJI ของคุณ'
+        }
+      ],
+      note: {
+        title: 'หมายเหตุสำคัญ',
+        description:
+          'ทุกครั้งที่คุณโอน USDT และ BNB เข้ามา กรุณาเลือก Network: BNB Smart Chain (BEP20) เท่านั้น'
+      }
     }
   }
 } as const;
