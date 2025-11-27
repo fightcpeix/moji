@@ -141,6 +141,10 @@ const StepHeader = styled.span`
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 968px) {
+    justify-content: flex-start;
+  }
 `;
 
 const StepNumber = styled.span`
@@ -180,6 +184,12 @@ const StepContent = styled.div<{ $isReverse: boolean }>`
   align-items: flex-start;
   ${({ $isReverse }) =>
     $isReverse ? `flex-direction: row;` : `flex-direction: row-reverse;`}
+
+  @media (max-width: 968px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 `;
 
 const StepDescription = styled.div`
@@ -188,6 +198,11 @@ const StepDescription = styled.div`
   color: #cdd4d6;
   margin: 0;
   flex: 1;
+
+  @media (max-width: 968px) {
+    width: 100%;
+    text-align: left;
+  }
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -200,6 +215,18 @@ const StepImageWrapper = styled.div`
   height: max-content;
   border-radius: 12px;
   overflow: hidden;
+
+  @media (max-width: 968px) {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 `;
 
 const NoteSection = styled.div`

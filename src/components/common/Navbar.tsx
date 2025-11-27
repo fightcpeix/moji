@@ -233,6 +233,13 @@ const Navbar = () => {
   const scrollToSection = (id: string) => {
     setShowMobileMenu(false);
 
+    // Check if we're on a different page
+    if (window.location.pathname !== '/') {
+      // Navigate to home page with hash
+      router.push(`/#${id}`);
+      return;
+    }
+
     if (id === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -318,7 +325,7 @@ const Navbar = () => {
       </NavbarStyle>
 
       <MobileMenuStyle $show={isShowMobileMenu}>
-        <div className="!px-[10px] flex flex-row items-center justify-between">
+        <div className="px-[10px]! flex flex-row items-center justify-between">
           <span className="opacity-70 text-[#83a6d3]">Language</span>
           <div>
             <LanguageSwitcher />
