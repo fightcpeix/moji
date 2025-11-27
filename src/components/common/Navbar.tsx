@@ -299,8 +299,8 @@ const Navbar = () => {
             </NavLink>
           ))}
           <NavLink onClick={() => router.push('/store-moji')}>
-              How to store MOJI
-            </NavLink>
+            How to store MOJI
+          </NavLink>
           <LanguageSwitcher />
           <Link href="https://public.moji.house" target="_blank">
             <CTAButton>Join Presale</CTAButton>
