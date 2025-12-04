@@ -460,14 +460,11 @@ export const Conclusion = () => {
                   <span>{t('conclusion.cta.primaryButton')}</span>
                 </Button>
               </Link>
-              <Button
-                $variant="secondary"
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-              >
-                <span>{t('conclusion.cta.secondaryButton')}</span>
-              </Button>
+              <Link href="https://t.me/mojihousetoken" target="_blank">
+                <Button $variant="secondary">
+                  <span>{t('conclusion.cta.secondaryButton')}</span>
+                </Button>
+              </Link>
             </CTAButtons>
           </CTASection>
 

@@ -338,7 +338,7 @@ export const translations = {
       cta: {
         title: 'Join Us in Building the Future',
         primaryButton: 'Join Presale Now',
-        secondaryButton: 'Read Whitepaper Again'
+        secondaryButton: 'Join Telegram'
       },
       tagline:
         '"Join us in building a limitless real estate ecosystem — the future of decentralized property ownership starts here."'
@@ -720,7 +720,7 @@ export const translations = {
       cta: {
         title: 'ร่วมสร้างอนาคตกับเรา',
         primaryButton: 'เข้าร่วม Presale ตอนนี้',
-        secondaryButton: 'อ่าน Whitepaper อีกครั้ง'
+        secondaryButton: 'เข้าร่วม Telegram'
       },
       tagline:
         '"ร่วมสร้างระบบนิเวศอสังหาริมทรัพย์ไร้ขีดจำกัดกับเรา — อนาคตของความเป็นเจ้าของทรัพย์สินแบบกระจายอำนาจเริ่มต้นที่นี่"'
